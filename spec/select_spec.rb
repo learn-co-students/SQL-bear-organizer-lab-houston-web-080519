@@ -41,3 +41,4 @@ describe 'querying the bears table' do
     expect(@db.execute(selects_bear_that_killed_Tim)).to eq([[8, nil, 20, "M", "black", "aggressive", 0]])
   end
 end
+"SELECT bears.color, COUNT(bears.color) FROM bears GROUP BY bears.color ORDER BY COUNT(*) DESC LIMIT 1;"
